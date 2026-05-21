@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://measure-bridge.vercel.app/sitemap.xml
