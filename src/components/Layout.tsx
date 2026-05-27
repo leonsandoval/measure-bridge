@@ -11,7 +11,7 @@ export default function Layout({ children }: LayoutProps) {
       </header>
       <CategoryTabs />
       <main className="flex-1 flex flex-col items-center px-4 py-6">
-        <div className="w-full max-w-md">
+        <div className="w-full max-w-md md:max-w-lg xl:max-w-xl">
           {children}
         </div>
       </main>
