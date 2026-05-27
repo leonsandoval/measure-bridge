@@ -31,8 +31,8 @@ export default function ResultDisplay({ result, secondaryResult, error }: Result
       ? formatResult(secondaryResult.primaryValue, secondaryResult.primaryUnit)
       : null;
     return (
-      <div className="mt-4 p-6 rounded-xl bg-slate-800 border border-slate-600">
-        <div className="text-center">
+      <div className="mt-4 p-6 rounded-xl bg-slate-800 border border-slate-600 overflow-hidden">
+        <div className="text-center break-words">
           <p className="text-3xl font-bold text-white">{primaryText}</p>
           {secondaryText && (
             <p className="text-sm text-slate-400 mt-1">≈ {secondaryText}</p>

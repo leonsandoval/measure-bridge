@@ -20,8 +20,8 @@ export default function ConverterForm() {
   return (
     <div className="flex flex-col gap-4">
       {/* Selectores De / A */}
-      <div className="flex items-end gap-3">
-        <div className="flex-1">
+      <div className="flex flex-col sm:flex-row sm:items-end gap-2 sm:gap-3">
+        <div className="flex-1 min-w-0">
           <UnitSelect
             label="De"
             value={fromUnit}
@@ -32,15 +32,15 @@ export default function ConverterForm() {
         {/* Botón Swap */}
         <button
           onClick={swap}
-          className="mb-0.5 p-2 rounded-lg bg-slate-700 hover:bg-slate-600 transition-colors"
+          className="self-center sm:self-auto mb-0 sm:mb-0.5 p-2 rounded-lg bg-slate-700 hover:bg-slate-600 transition-colors"
           title="Invertir origen y destino"
           aria-label="Intercambiar unidades"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 rotate-90 sm:rotate-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
           </svg>
         </button>
-        <div className="flex-1">
+        <div className="flex-1 min-w-0">
           <UnitSelect
             label="A"
             value={toUnit}
