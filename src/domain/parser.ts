@@ -57,6 +57,7 @@ const PATTERNS: { regex: RegExp; imperialUnit: string; parse: (matches: RegExpMa
   },
   // Volumen: 2 cups, 3 tbsp, 1 tsp
   {
+    // eslint-disable-next-line security/detect-unsafe-regex -- anchored pattern, no backtracking risk
     regex: /^(\d+(?:\.\d+)?)\s*(cup|cups|tbsp|tsp|gal|qt|pt|floz?)\s*$/i,
     imperialUnit: '', // se determina del match
     parse: (m) => {
