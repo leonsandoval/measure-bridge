@@ -25,36 +25,34 @@ describe('ConverterForm', () => {
       error: null,
     });
   });
-  it('renderiza el formulario con selects e input', () => {
-  render(<TestApp />);
-  expect(screen.getByText('De')).toBeDefined();
-  expect(screen.getByText('A')).toBeDefined();
-  expect(screen.getByPlaceholderText(/6'2/)).toBeDefined();
-});
-  it('cambia categoría desde los tabs', async () => {
+  it('renders form with selects and input', () => {
+    render(<TestApp />);
+    expect(screen.getByText('From')).toBeDefined();
+    expect(screen.getByText('To')).toBeDefined();
+    expect(screen.getByPlaceholderText(/6'2/)).toBeDefined();
+  });
+  it('switches category from tabs', async () => {
     const user = userEvent.setup();
     render(<TestApp />);
-    // Hacemos click en el botón completo (contiene emoji + texto)
-    await user.click(screen.getByRole('button', { name: /volumen/i }));
+    await user.click(screen.getByRole('button', { name: /volume/i }));
     const state = useConverterStore.getState();
     expect(state.category).toBe('volume');
   });
-  it('escribe un valor y ve el resultado', async () => {
+  it('types a value and sees the result', async () => {
     const user = userEvent.setup();
     render(<TestApp />);
     const input = screen.getByPlaceholderText(/6'2/);
     await user.type(input, '1');
-    // Usamos el texto exacto del resultado para evitar ambigüedad
-    const result = await screen.findByText('3,28 ft');
+    const result = await screen.findByText('3.28 ft');
     expect(result).toBeDefined();
   });
-  it('intercambia unidades con botón swap', async () => {
+  it('swaps units with swap button', async () => {
     const user = userEvent.setup();
     render(<TestApp />);
     const before = useConverterStore.getState();
     expect(before.fromUnit).toBe('m');
     expect(before.toUnit).toBe('ft');
-    await user.click(screen.getByLabelText('Intercambiar unidades'));
+    await user.click(screen.getByLabelText('Swap units'));
     const after = useConverterStore.getState();
     expect(after.fromUnit).toBe('ft');
     expect(after.toUnit).toBe('m');

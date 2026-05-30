@@ -1,5 +1,6 @@
 import { useId } from 'react';
-import { Unit } from '../domain/types';
+import { useTranslation } from 'react-i18next';
+import type { Unit } from '../domain/types';
 interface UnitSelectProps {
   label: string;
   value: string;
@@ -7,6 +8,7 @@ interface UnitSelectProps {
   onChange: (unitId: string) => void;
 }
 export default function UnitSelect({ label, value, units, onChange }: UnitSelectProps) {
+  const { t } = useTranslation();
   const id = useId();
   const metricUnits = units.filter(u => u.system === 'metric');
   const imperialUnits = units.filter(u => u.system === 'imperial');
@@ -21,19 +23,19 @@ export default function UnitSelect({ label, value, units, onChange }: UnitSelect
                    focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 w-full"
       >
         {metricUnits.length > 0 && (
-          <optgroup label="Sistema Métrico">
+          <optgroup label={t('units.metric')}>
             {metricUnits.map((u) => (
               <option key={u.id} value={u.id}>
-                {u.abbreviation} — {u.label}
+                {u.abbreviation} — {t(`units.${u.id}`)}
               </option>
             ))}
           </optgroup>
         )}
         {imperialUnits.length > 0 && (
-          <optgroup label="Sistema Imperial">
+          <optgroup label={t('units.imperial')}>
             {imperialUnits.map((u) => (
               <option key={u.id} value={u.id}>
-                {u.abbreviation} — {u.label}
+                {u.abbreviation} — {t(`units.${u.id}`)}
               </option>
             ))}
           </optgroup>

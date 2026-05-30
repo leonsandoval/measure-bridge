@@ -3,15 +3,15 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import ResultDisplay from '../ResultDisplay';
 describe('ResultDisplay', () => {
-  it('muestra estado vacío cuando no hay resultado ni error', () => {
+  it('shows empty state when no result or error', () => {
     render(<ResultDisplay result={null} secondaryResult={null} error={null} />);
-    expect(screen.getByText(/ingresá un valor/i)).toBeDefined();
+    expect(screen.getByText(/enter a value/i)).toBeDefined();
   });
-  it('muestra mensaje de error', () => {
+  it('shows error message', () => {
     render(<ResultDisplay result={null} secondaryResult={null} error="Input inválido" />);
     expect(screen.getByText('Input inválido')).toBeDefined();
   });
-  it('muestra resultado primario', () => {
+  it('shows primary result', () => {
     render(
       <ResultDisplay
         result={{ primaryValue: 100, primaryUnit: 'cm' }}
@@ -19,9 +19,9 @@ describe('ResultDisplay', () => {
         error={null}
       />
     );
-    expect(screen.getByText('100,00 cm')).toBeDefined();
+    expect(screen.getByText('100.00 cm')).toBeDefined();
   });
-  it('muestra resultado secundario cuando existe', () => {
+  it('shows secondary result when present', () => {
     render(
       <ResultDisplay
         result={{ primaryValue: 1, primaryUnit: 'm' }}
@@ -29,13 +29,12 @@ describe('ResultDisplay', () => {
         error={null}
       />
     );
-    expect(screen.getByText('1,00 m')).toBeDefined();
-    expect(screen.getByText(/100,00 cm/)).toBeDefined();
+    expect(screen.getByText('1.00 m')).toBeDefined();
+    expect(screen.getByText(/100.00 cm/)).toBeDefined();
   });
-  it('copia al portapapeles cuando se hace click en copiar', async () => {
+  it('copies to clipboard on copy click', async () => {
     const user = userEvent.setup();
     const writeText = vi.fn().mockResolvedValue(undefined);
-    // Mock correcto para jsdom: navigator.clipboard es read-only
     Object.defineProperty(navigator, 'clipboard', {
       value: { writeText },
       configurable: true,
@@ -48,7 +47,7 @@ describe('ResultDisplay', () => {
         error={null}
       />
     );
-    await user.click(screen.getByText('Copiar resultado'));
-    expect(writeText).toHaveBeenCalledWith('25,40 mm');
+    await user.click(screen.getByText('Copy result'));
+    expect(writeText).toHaveBeenCalledWith('25.40 mm');
   });
 });

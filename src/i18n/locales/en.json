@@ -1,0 +1,84 @@
+{
+  "app": {
+    "title": "MeasureBridge",
+    "metaTitle": "MeasureBridge — Metric & Imperial Unit Converter",
+    "metaDescription": "Convert between metric and imperial systems with intelligent composite notation parsing (6 feet 2 inches, 2 cups, 10 lb 5 oz), plus temperature, area and speed.",
+    "metaKeywords": "unit converter, metric imperial, cm to inches, feet to meters, cups to ml, imperial parser, PWA",
+    "ogDescription": "Smart unit converter between metric and imperial systems",
+    "twitterDescription": "Smart unit converter between metric and imperial systems",
+    "jsonLdDescription": "Unit converter between metric and imperial systems with intelligent composite notation parsing."
+  },
+  "form": {
+    "from": "From",
+    "to": "To",
+    "value": "Value",
+    "placeholder": "e.g., 6'2\", 2 cups, 100",
+    "helper": "Accepts numbers and imperial notation (6'2\", 5ft 10in, 2 cups, 10 lb 5 oz)",
+    "swap": {
+      "title": "Swap source and destination",
+      "aria": "Swap units"
+    }
+  },
+  "units": {
+    "metric": "Metric System",
+    "imperial": "Imperial System",
+    "mm": "Millimeter",
+    "cm": "Centimeter",
+    "m": "Meter",
+    "km": "Kilometer",
+    "in": "Inch",
+    "ft": "Foot",
+    "yd": "Yard",
+    "mi": "Mile",
+    "ml": "Milliliter",
+    "l": "Liter",
+    "cm3": "Cubic centimeter",
+    "m3": "Cubic meter",
+    "floz": "Fluid ounce",
+    "pt": "Pint",
+    "qt": "Quart",
+    "gal": "Gallon",
+    "cup": "Cup",
+    "tbsp": "Tablespoon",
+    "tsp": "Teaspoon",
+    "g": "Gram",
+    "kg": "Kilogram",
+    "t": "Tonne",
+    "oz": "Ounce",
+    "lb": "Pound",
+    "st": "Stone",
+    "c": "Celsius",
+    "f": "Fahrenheit",
+    "cm2": "Square centimeter",
+    "m2": "Square meter",
+    "ha": "Hectare",
+    "km2": "Square kilometer",
+    "in2": "Square inch",
+    "ft2": "Square foot",
+    "ac": "Acre",
+    "mi2": "Square mile",
+    "ms": "Meter per second",
+    "kmh": "Kilometer per hour",
+    "mph": "Mile per hour",
+    "fts": "Foot per second",
+    "kn": "Knot"
+  },
+  "categories": {
+    "length": "Length",
+    "volume": "Volume",
+    "mass": "Mass",
+    "temperature": "Temperature",
+    "area": "Area",
+    "speed": "Speed"
+  },
+  "result": {
+    "empty": "Enter a value to see the result",
+    "copy": "Copy result",
+    "copied": "✓ Copied"
+  },
+  "error": {
+    "invalidNumber": "Enter a valid number",
+    "conversion": "Conversion error",
+    "unknownCategory": "Unknown category: {{category}}"
+  }
+}
