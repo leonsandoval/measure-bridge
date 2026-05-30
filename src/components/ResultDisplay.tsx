@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import type { Result } from '../domain/types';
 import { formatResult } from '../utils/format';
 import { useCopyToClipboard } from '../hooks/useCopyToClipboard';
@@ -7,16 +8,15 @@ interface ResultDisplayProps {
   error: string | null;
 }
 export default function ResultDisplay({ result, secondaryResult, error }: ResultDisplayProps) {
+  const { t } = useTranslation();
   const { copy, copied } = useCopyToClipboard();
-  // Estado vacío: no hay input todavía
   if (!result && !error) {
     return (
       <div className="mt-4 p-6 rounded-xl bg-slate-800/50 border border-dashed border-slate-600 text-center">
-        <p className="text-slate-400 text-sm">Ingresá un valor para ver el resultado</p>
+        <p className="text-slate-400 text-sm">{t('result.empty')}</p>
       </div>
     );
   }
-  // Estado error
   if (error) {
     return (
       <div className="mt-4 p-4 rounded-xl bg-red-900/30 border border-red-700 text-center">
@@ -24,7 +24,6 @@ export default function ResultDisplay({ result, secondaryResult, error }: Result
       </div>
     );
   }
-  // Estado resultado
   if (result) {
     const primaryText = formatResult(result.primaryValue, result.primaryUnit);
     const secondaryText = secondaryResult
@@ -48,7 +47,7 @@ export default function ResultDisplay({ result, secondaryResult, error }: Result
             }
           `}
         >
-          {copied ? '✓ Copiado' : 'Copiar resultado'}
+          {copied ? t('result.copied') : t('result.copy')}
         </button>
       </div>
     );

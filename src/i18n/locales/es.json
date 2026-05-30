@@ -1,0 +1,84 @@
+{
+  "app": {
+    "title": "MeasureBridge",
+    "metaTitle": "MeasureBridge — Conversor de medidas métricas e imperiales",
+    "metaDescription": "Convierte entre sistema métrico e imperial con parseo inteligente de notación compuesta (6 pies 2 pulgadas, 2 cups, 10 lb 5 oz), además de temperatura, área y velocidad.",
+    "metaKeywords": "conversor medidas, métrico imperial, centímetros a pulgadas, pies a metros, tazas a ml, parseo imperial, PWA",
+    "ogDescription": "Conversor inteligente de medidas entre sistemas métrico e imperial",
+    "twitterDescription": "Conversor inteligente de medidas entre sistemas métrico e imperial",
+    "jsonLdDescription": "Conversor de medidas entre sistema métrico e imperial con parseo inteligente de notación compuesta."
+  },
+  "form": {
+    "from": "De",
+    "to": "A",
+    "value": "Valor",
+    "placeholder": "Ej: 6'2\", 2 cups, 100",
+    "helper": "Acepta números y notación imperial (6'2\", 5ft 10in, 2 cups, 10 lb 5 oz)",
+    "swap": {
+      "title": "Invertir origen y destino",
+      "aria": "Intercambiar unidades"
+    }
+  },
+  "units": {
+    "metric": "Sistema Métrico",
+    "imperial": "Sistema Imperial",
+    "mm": "Milímetro",
+    "cm": "Centímetro",
+    "m": "Metro",
+    "km": "Kilómetro",
+    "in": "Pulgada",
+    "ft": "Pie",
+    "yd": "Yarda",
+    "mi": "Milla",
+    "ml": "Mililitro",
+    "l": "Litro",
+    "cm3": "Centímetro cúbico",
+    "m3": "Metro cúbico",
+    "floz": "Onza líquida",
+    "pt": "Pinta",
+    "qt": "Cuarto",
+    "gal": "Galón",
+    "cup": "Taza",
+    "tbsp": "Cucharada",
+    "tsp": "Cucharadita",
+    "g": "Gramo",
+    "kg": "Kilogramo",
+    "t": "Tonelada",
+    "oz": "Onza",
+    "lb": "Libra",
+    "st": "Stone",
+    "c": "Celsius",
+    "f": "Fahrenheit",
+    "cm2": "Centímetro cuadrado",
+    "m2": "Metro cuadrado",
+    "ha": "Hectárea",
+    "km2": "Kilómetro cuadrado",
+    "in2": "Pulgada cuadrada",
+    "ft2": "Pie cuadrado",
+    "ac": "Acre",
+    "mi2": "Milla cuadrada",
+    "ms": "Metro por segundo",
+    "kmh": "Kilómetro por hora",
+    "mph": "Milla por hora",
+    "fts": "Pie por segundo",
+    "kn": "Nudo"
+  },
+  "categories": {
+    "length": "Longitud",
+    "volume": "Volumen",
+    "mass": "Masa",
+    "temperature": "Temperatura",
+    "area": "Área",
+    "speed": "Velocidad"
+  },
+  "result": {
+    "empty": "Ingresá un valor para ver el resultado",
+    "copy": "Copiar resultado",
+    "copied": "✓ Copiado"
+  },
+  "error": {
+    "invalidNumber": "Ingresá un valor numérico válido",
+    "conversion": "Error de conversión",
+    "unknownCategory": "Categoría desconocida: {{category}}"
+  }
+}

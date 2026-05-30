@@ -1,4 +1,5 @@
 import { create } from 'zustand';
+import i18n from 'i18next';
 import type { Result } from '../domain/types';
 import { parseImperialNotation } from '../domain/parser';
 import { convertLength } from '../domain/categories/length';
@@ -99,14 +100,14 @@ export const useConverterStore = create<ConverterState>((set, get) => ({
       } else {
         const floatVal = parseFloat(inputValue);
         if (isNaN(floatVal)) {
-          set({ error: 'Ingresá un valor numérico válido', result: null, secondaryResult: null });
+          set({ error: i18n.t('error.invalidNumber'), result: null, secondaryResult: null });
           return;
         }
         numericValue = floatVal;
         effectiveFromUnit = fromUnit;
       }
       const converter = converters[category];
-      if (!converter) throw new Error(`Categoría desconocida: ${category}`);
+      if (!converter) throw new Error(i18n.t('error.unknownCategory', { category }));
       const converted = converter(numericValue, effectiveFromUnit, toUnit);
       const rounded = roundToPrecision(converted, toUnit, category);
       const toUnitAbbr = getUnit(category, toUnit).abbreviation;
@@ -131,7 +132,7 @@ export const useConverterStore = create<ConverterState>((set, get) => ({
       set({ result: primaryResult, secondaryResult, error: null });
     } catch (err) {
       set({
-        error: err instanceof Error ? err.message : 'Error de conversión',
+        error: err instanceof Error ? err.message : i18n.t('error.conversion'),
         result: null,
         secondaryResult: null,
       });

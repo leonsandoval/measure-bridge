@@ -1,9 +1,7 @@
-/**
- * Formateo de números con localización.
- * Usa Intl.NumberFormat para separadores de miles y decimales consistentes.
- */
+import i18n from 'i18next';
+
 export function formatNumber(value: number, decimals: number = 2): string {
-  return new Intl.NumberFormat('es-AR', {
+  return new Intl.NumberFormat(i18n.language, {
     minimumFractionDigits: decimals,
     maximumFractionDigits: decimals,
     useGrouping: true,
