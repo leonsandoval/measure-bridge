@@ -1,0 +1,10 @@
+﻿[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.measurebridge.app",
+      "sha256_cert_fingerprints": ["41:82:3F:B4:B2:7F:6F:B6:2D:91:8F:2E:0B:4B:29:8B:4D:BA:AF:EE:26:C0:C8:73:BC:C2:54:6F:07:30:0D:87"]
+    }
+  }
+]

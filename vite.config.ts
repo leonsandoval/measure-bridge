@@ -11,8 +11,9 @@ export default defineConfig({
       includeAssets: ['favicon.svg', 'robots.txt'],
       manifest: {
         name: 'MeasureBridge',
-        short_name: 'MeasureBridge',
+        short_name: 'MBridge',
         description: 'Conversor de medidas entre sistema métrico e imperial con parseo inteligente',
+        lang: 'es',
         theme_color: '#0f172a',
         background_color: '#0f172a',
         display: 'standalone',
