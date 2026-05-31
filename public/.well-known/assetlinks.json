@@ -4,7 +4,10 @@
     "target": {
       "namespace": "android_app",
       "package_name": "app.vercel.measure_bridge.twa",
-      "sha256_cert_fingerprints": ["41:82:3F:B4:B2:7F:6F:B6:2D:91:8F:2E:0B:4B:29:8B:4D:BA:AF:EE:26:C0:C8:73:BC:C2:54:6F:07:30:0D:87"]
+       "sha256_cert_fingerprints": [
+         "41:82:3F:B4:B2:7F:6F:B6:2D:91:8F:2E:0B:4B:29:8B:4D:BA:AF:EE:26:C0:C8:73:BC:C2:54:6F:07:30:0D:87",
+         "44:0F:B8:93:86:52:02:AD:B9:FE:6F:59:7C:3D:90:8B:12:97:72:87:90:20:60:98:0A:74:F0:27:76:57:89:4A"
+       ]
     }
   }
 ]
